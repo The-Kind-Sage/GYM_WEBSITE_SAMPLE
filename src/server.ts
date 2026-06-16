@@ -43,6 +43,12 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const url = new URL(request.url);
+      if (url.pathname === "/favicon.ico") {
+        return new Response(
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💪</text></svg>',
+          { headers: { "content-type": "image/svg+xml" } },
+        );
+      }
       if (url.pathname === "/admin" && request.method === "GET") {
         return adminHandler(request, env, ctx);
       }
