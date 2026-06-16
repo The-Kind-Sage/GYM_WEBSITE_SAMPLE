@@ -154,7 +154,7 @@ function escapeHtml(input: string) {
     .replaceAll("&", "&amp;")
     .replaceAll("<", "<")
     .replaceAll(">", ">")
-    .replaceAll('"', """)
+    .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
 
