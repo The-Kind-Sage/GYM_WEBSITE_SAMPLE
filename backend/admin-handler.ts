@@ -1,10 +1,6 @@
 // TanStack Start / h3 request handler signature: (request, env, ctx) => Response
 export async function adminHandler(_request: Request, _env: unknown, _ctx: unknown) {
-  const payload = JSON.stringify(
-    { ok: true, timestamp: new Date().toISOString() },
-    null,
-    2,
-  );
+  const payload = JSON.stringify({ ok: true, timestamp: new Date().toISOString() }, null, 2);
 
   const html = `<!doctype html>
 <html lang="en">
@@ -15,7 +11,6 @@ export async function adminHandler(_request: Request, _env: unknown, _ctx: unkno
   <style>
     body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; min-height: 100vh; padding: 24px; background: #0a0a0a; color: #f5f5f5; margin: 0; }
     pre { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 16px; }
-    a { color: inherit; }
   </style>
 </head>
 <body>
@@ -36,7 +31,6 @@ function escapeHtml(input: string) {
     .replaceAll("&", "&amp;")
     .replaceAll("<", "<")
     .replaceAll(">", ">")
-    .replaceAll('"', """)
+    .replaceAll('"', '"')
     .replaceAll("'", "&#39;");
 }
-
